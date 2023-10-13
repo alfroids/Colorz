@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://o6m286bxy7wj"]
+
+[ext_resource type="Script" path="res://Pieces/Playable/TurnPipe/turn_pipe.gd" id="1_ig5qt"]
+[ext_resource type="Shader" path="res://Pieces/paint.gdshader" id="2_c2fbd"]
+[ext_resource type="Texture2D" uid="uid://c4djt5cq4k8pa" path="res://Pieces/Playable/TurnPipe/turn_pipe.png" id="2_jwcbn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_urlw2"]
+resource_local_to_scene = true
+shader = ExtResource("2_c2fbd")
+shader_parameter/PAINT_COLOR = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/SHADOW_COLOR = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COLOR = Color(0.87451, 0.988235, 1, 1)
+
+[node name="TurnPipe" type="Node2D"]
+script = ExtResource("1_ig5qt")
+ID = 2
+
+[node name="Paint" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_urlw2")
+polygon = PackedVector2Array(-28, -12, -28, 12, -12, 12, -12, 28, 12, 28, 12, -12)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_jwcbn")

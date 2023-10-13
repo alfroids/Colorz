@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://6nkff5h0nu7f"]
+
+[ext_resource type="Script" path="res://Pieces/Playable/Mixer/mixer.gd" id="1_0wad7"]
+[ext_resource type="Shader" path="res://Pieces/paint.gdshader" id="2_2cygs"]
+[ext_resource type="Texture2D" uid="uid://b044gwt63ceyv" path="res://Pieces/Playable/Mixer/mixer.png" id="2_7sug8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dogxq"]
+resource_local_to_scene = true
+shader = ExtResource("2_2cygs")
+shader_parameter/PAINT_COLOR = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/SHADOW_COLOR = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COLOR = Color(0.87451, 0.988235, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sge8y"]
+resource_local_to_scene = true
+shader = ExtResource("2_2cygs")
+shader_parameter/PAINT_COLOR = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/SHADOW_COLOR = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COLOR = Color(0.87451, 0.988235, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nfw0n"]
+resource_local_to_scene = true
+shader = ExtResource("2_2cygs")
+shader_parameter/PAINT_COLOR = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/SHADOW_COLOR = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COLOR = Color(0.87451, 0.988235, 1, 1)
+
+[node name="Mixer" type="Node2D"]
+script = ExtResource("1_0wad7")
+ID = 3
+
+[node name="Paint1" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_dogxq")
+polygon = PackedVector2Array(-12, -28, 12, -28, 12, -9, 4, -3, -4, -3, -12, -9)
+
+[node name="Paint2" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_sge8y")
+polygon = PackedVector2Array(-12, 9, -4, 3, 4, 3, 12, 9, 12, 28, -12, 28)
+
+[node name="Paint3" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_nfw0n")
+polygon = PackedVector2Array(28, 12, 28, -12, 13, -12, 5, -3, -4, -3, -11, -7, -14, 0, -11, 7, -4, 3, 5, 3, 13, 12)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_7sug8")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcovngkir4ll6"]
+
+[ext_resource type="Script" path="res://Pieces/Fixed/Source/source.gd" id="1_1qdr2"]
+[ext_resource type="Shader" path="res://Pieces/paint.gdshader" id="2_bnw01"]
+[ext_resource type="Texture2D" uid="uid://bwamjkix8aej8" path="res://Pieces/Fixed/Source/source.png" id="2_ojsu5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w2lce"]
+resource_local_to_scene = true
+shader = ExtResource("2_bnw01")
+shader_parameter/PAINT_COLOR = Color(0.976471, 0.0823529, 0.321569, 1)
+shader_parameter/SHADOW_COLOR = Color(0.592157, 0.0556863, 0.200784, 1)
+shader_parameter/FOAM_COLOR = Color(0.983529, 0.357647, 0.525098, 1)
+shader_parameter/distortion_speed = 5.0
+shader_parameter/tile = Vector2(2, 2)
+shader_parameter/offset = Vector2(0, 0)
+
+[node name="Source" type="Node2D"]
+script = ExtResource("1_1qdr2")
+
+[node name="Paint" type="Polygon2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_w2lce")
+position = Vector2(-1.5, 1.43051e-06)
+scale = Vector2(0.6875, 0.75)
+polygon = PackedVector2Array(-37.0909, -21.3333, 0.727273, -37.3333, 21.0909, -30.6667, 21.0909, -18.5529, 40, -1.90735e-06, 21.0909, 20.1283, 21.0909, 30.6667, 0.727273, 37.3333, -37.0909, 21.3333)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_ojsu5")

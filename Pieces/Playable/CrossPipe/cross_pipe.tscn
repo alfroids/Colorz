@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd4gsfoh2tcdo"]
+
+[ext_resource type="Script" path="res://Pieces/Playable/CrossPipe/cross_pipe.gd" id="1_3t3lw"]
+[ext_resource type="Shader" path="res://Pieces/paint.gdshader" id="2_asuet"]
+[ext_resource type="Texture2D" uid="uid://b0fbepvixjict" path="res://Pieces/Playable/CrossPipe/cross_pipe.png" id="2_tyikx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_shxaw"]
+resource_local_to_scene = true
+shader = ExtResource("2_asuet")
+shader_parameter/PAINT_COLOR = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/SHADOW_COLOR = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COLOR = Color(0.87451, 0.988235, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gcf8q"]
+resource_local_to_scene = true
+shader = ExtResource("2_asuet")
+shader_parameter/PAINT_COLOR = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/SHADOW_COLOR = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COLOR = Color(0.87451, 0.988235, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fb0sg"]
+resource_local_to_scene = true
+shader = ExtResource("2_asuet")
+shader_parameter/PAINT_COLOR = Color(0.176471, 0.635294, 0.85098, 1)
+shader_parameter/SHADOW_COLOR = Color(0.0588235, 0.529412, 0.776471, 1)
+shader_parameter/FOAM_COLOR = Color(0.87451, 0.988235, 1, 1)
+
+[node name="CrossPipe" type="Node2D"]
+script = ExtResource("1_3t3lw")
+ID = 4
+
+[node name="Paint1" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_shxaw")
+polygon = PackedVector2Array(-9, -26, 9, -26, 9, -8.05636, 1, -4, -1, -4, -9, -8.05636)
+
+[node name="Paint2" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_gcf8q")
+polygon = PackedVector2Array(-26, -9, -7.91772, -9, 0, -4, 8.30353, -9, 26, -9, 26, 9, 8.25392, 9, 0, 4, -8.06654, 9, -26, 9)
+
+[node name="Paint3" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_fb0sg")
+polygon = PackedVector2Array(1, 4, 9, 8.53663, 9, 26, -9, 26, -9, 8.09118, -1, 4)
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_tyikx")
