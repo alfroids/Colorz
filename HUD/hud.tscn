@@ -1,0 +1,76 @@
+[gd_scene load_steps=12 format=3 uid="uid://dlhbsbudmwu0k"]
+
+[ext_resource type="Script" path="res://HUD/hud.gd" id="1_l3hen"]
+[ext_resource type="PackedScene" uid="uid://dtnoqefgaxlbt" path="res://HUD/Buttons/SimplePipe/simple_pipe_button.tscn" id="1_ve01h"]
+[ext_resource type="PackedScene" uid="uid://cu53j6b171yfn" path="res://HUD/Buttons/TurnPipe/turn_pipe_button.tscn" id="2_5oc8i"]
+[ext_resource type="PackedScene" uid="uid://d2h8sqlmyabh1" path="res://HUD/Buttons/Mixer/mixer_button.tscn" id="3_d58fo"]
+[ext_resource type="ButtonGroup" uid="uid://cbcyeg6e603he" path="res://HUD/piece_buttons.tres" id="3_khu8t"]
+[ext_resource type="PackedScene" uid="uid://b1hk26a44hf6y" path="res://HUD/Buttons/CrossPipe/cross_pipe_button.tscn" id="4_1gltj"]
+[ext_resource type="PackedScene" uid="uid://d2opgnukwuvoj" path="res://HUD/Buttons/Inverter/inverter_button.tscn" id="5_fy34r"]
+[ext_resource type="Texture2D" uid="uid://dhme3w6sxyn4f" path="res://HUD/diagram.png" id="6_dyofh"]
+[ext_resource type="Shader" path="res://HUD/arrow.gdshader" id="7_w1d1h"]
+[ext_resource type="Texture2D" uid="uid://c88n53a0jdqdd" path="res://HUD/arrow.png" id="8_aeqx8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3s0nf"]
+shader = ExtResource("7_w1d1h")
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_l3hen")
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -25.0
+offset_right = 184.0
+offset_bottom = 25.0
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="SimplePipeButton" parent="Buttons" instance=ExtResource("1_ve01h")]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_khu8t")
+
+[node name="TurnPipeButton" parent="Buttons" instance=ExtResource("2_5oc8i")]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_khu8t")
+
+[node name="MixerButton" parent="Buttons" instance=ExtResource("3_d58fo")]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_khu8t")
+
+[node name="CrossPipeButton" parent="Buttons" instance=ExtResource("4_1gltj")]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_khu8t")
+
+[node name="InverterButton" parent="Buttons" instance=ExtResource("5_fy34r")]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("3_khu8t")
+
+[node name="Diagram" type="TextureRect" parent="Buttons"]
+visible = false
+layout_mode = 2
+texture = ExtResource("6_dyofh")
+
+[node name="Arrow" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_3s0nf")
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -56.0
+offset_right = -64.0
+offset_bottom = 56.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("8_aeqx8")
+stretch_mode = 3

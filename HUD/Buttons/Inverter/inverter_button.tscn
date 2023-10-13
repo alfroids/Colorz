@@ -1,0 +1,17 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2opgnukwuvoj"]
+
+[ext_resource type="PackedScene" uid="uid://cl6lltn2jec37" path="res://HUD/Buttons/Base/base_button.tscn" id="1_3ngos"]
+[ext_resource type="Texture2D" uid="uid://do0hiug35h7e7" path="res://HUD/Buttons/Inverter/inverter_button.png" id="2_71ftk"]
+[ext_resource type="Texture2D" uid="uid://cx4f8hyw7cffc" path="res://Pieces/Playable/Inverter/pieces7.png" id="2_xi5kw"]
+[ext_resource type="Texture2D" uid="uid://dkf36uriucw8d" path="res://HUD/Buttons/Inverter/inverter_button_pressed.png" id="3_inyti"]
+[ext_resource type="Texture2D" uid="uid://btug5cp7jb635" path="res://HUD/Buttons/Inverter/inverter_button_faded.png" id="4_qkgk3"]
+
+[node name="InverterButton" instance=ExtResource("1_3ngos")]
+texture_normal = ExtResource("2_71ftk")
+texture_pressed = ExtResource("3_inyti")
+texture_hover = ExtResource("4_qkgk3")
+texture_disabled = ExtResource("4_qkgk3")
+ID = 5
+
+[node name="Piece" parent="." index="0"]
+texture = ExtResource("2_xi5kw")

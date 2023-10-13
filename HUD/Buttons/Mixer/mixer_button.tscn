@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2h8sqlmyabh1"]
+
+[ext_resource type="PackedScene" uid="uid://cl6lltn2jec37" path="res://HUD/Buttons/Base/base_button.tscn" id="1_4l1cn"]
+[ext_resource type="Texture2D" uid="uid://dyrhtqhaswvuq" path="res://HUD/Buttons/Mixer/mixer_button.png" id="2_8prdk"]
+[ext_resource type="Texture2D" uid="uid://dpiomcnubf27j" path="res://Pieces/Playable/Mixer/pieces6.png" id="2_48do1"]
+[ext_resource type="Texture2D" uid="uid://bfwxxqtifxn76" path="res://HUD/Buttons/Mixer/mixer_button_pressed.png" id="3_a0uue"]
+[ext_resource type="Texture2D" uid="uid://bcxvegdm23kwi" path="res://HUD/Buttons/Mixer/mixer_button_faded.png" id="4_cw7vb"]
+
+[node name="MixerButton" instance=ExtResource("1_4l1cn")]
+texture_normal = ExtResource("2_8prdk")
+texture_pressed = ExtResource("3_a0uue")
+texture_hover = ExtResource("4_cw7vb")
+texture_disabled = ExtResource("4_cw7vb")
+ID = 3
+
+[node name="Piece" parent="." index="0"]
+offset_left = 17.0
+offset_right = -31.0
+texture = ExtResource("2_48do1")

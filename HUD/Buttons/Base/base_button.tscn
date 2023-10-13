@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl6lltn2jec37"]
+
+[ext_resource type="Texture2D" uid="uid://c8w86ka1m75qt" path="res://HUD/Buttons/Base/button.png" id="1_3vljm"]
+[ext_resource type="Texture2D" uid="uid://bejh40o0eu8by" path="res://HUD/Buttons/Base/button_pressed.png" id="2_cleql"]
+[ext_resource type="Script" path="res://HUD/Buttons/Base/piece_button.gd" id="3_2o857"]
+[ext_resource type="Texture2D" uid="uid://b4uk2jawynj67" path="res://HUD/Buttons/Base/button_faded.png" id="3_dmp3x"]
+[ext_resource type="Texture2D" uid="uid://ddcije3x3o2p2" path="res://Pieces/Playable/CrossPipe/pieces5.png" id="3_h55cv"]
+[ext_resource type="FontFile" uid="uid://cf6sdkis71xhn" path="res://fonts/Kanit-Medium.ttf" id="6_q523f"]
+
+[sub_resource type="FontVariation" id="FontVariation_b16ma"]
+base_font = ExtResource("6_q523f")
+
+[node name="TextureButton" type="TextureButton"]
+custom_minimum_size = Vector2(120, 120)
+offset_right = 128.0
+offset_bottom = 128.0
+texture_normal = ExtResource("1_3vljm")
+texture_pressed = ExtResource("2_cleql")
+texture_hover = ExtResource("3_dmp3x")
+texture_disabled = ExtResource("3_dmp3x")
+stretch_mode = 4
+script = ExtResource("3_2o857")
+
+[node name="Piece" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_h55cv")
+stretch_mode = 5
+
+[node name="Number" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.015625, 0.015625, 0.0195313, 1)
+theme_override_fonts/font = SubResource("FontVariation_b16ma")
+theme_override_font_sizes/font_size = 24
+text = "000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
