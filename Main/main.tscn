@@ -1,0 +1,73 @@
+[gd_scene load_steps=16 format=3 uid="uid://dcmlevbuvrx8o"]
+
+[ext_resource type="PackedScene" uid="uid://dlhbsbudmwu0k" path="res://HUD/hud.tscn" id="1_bqrv3"]
+[ext_resource type="PackedScene" uid="uid://druelnfgqhftr" path="res://Levels/intro_basics.tscn" id="1_ewq2q"]
+[ext_resource type="Script" path="res://Main/main.gd" id="1_lv8j1"]
+[ext_resource type="PackedScene" uid="uid://dnsi7smbsj70j" path="res://Levels/intro_duplication.tscn" id="2_267ad"]
+[ext_resource type="PackedScene" uid="uid://bt8h3jbremch4" path="res://Levels/intro_mixing.tscn" id="4_galfo"]
+[ext_resource type="Script" path="res://Main/camera.gd" id="4_iif4b"]
+[ext_resource type="PackedScene" uid="uid://cgbot2rhxo3uv" path="res://Levels/duplicate_and_mix.tscn" id="6_w3q5q"]
+[ext_resource type="PackedScene" uid="uid://oa36m5b58sse" path="res://Levels/multi_mixers.tscn" id="7_087qm"]
+[ext_resource type="PackedScene" uid="uid://d14dc27io0kop" path="res://Levels/challenge_one.tscn" id="8_y3qna"]
+[ext_resource type="PackedScene" uid="uid://b0u151k3s1vnf" path="res://Levels/intro_cross.tscn" id="9_c5s2y"]
+[ext_resource type="PackedScene" uid="uid://dwryn542u7njj" path="res://Levels/double_cross.tscn" id="10_k4la8"]
+[ext_resource type="PackedScene" uid="uid://duxh1rnm1lxbo" path="res://Levels/intro_inverter.tscn" id="11_d2hjw"]
+[ext_resource type="PackedScene" uid="uid://bb30iiypv7wjx" path="res://Levels/divide_and_conquer.tscn" id="12_j4bjs"]
+[ext_resource type="PackedScene" uid="uid://c6jv0lwnoosk4" path="res://Levels/come_and_go.tscn" id="13_i3h4f"]
+[ext_resource type="PackedScene" uid="uid://ln1ksfruogya" path="res://Levels/challenge_two.tscn" id="14_vaq1i"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_lv8j1")
+
+[node name="HUD" parent="." instance=ExtResource("1_bqrv3")]
+
+[node name="Levels" type="Node2D" parent="."]
+script = ExtResource("4_iif4b")
+SPEED = 0.2
+
+[node name="IntroBasics" parent="Levels" instance=ExtResource("1_ewq2q")]
+ID = 0
+
+[node name="IntroDuplication" parent="Levels" instance=ExtResource("2_267ad")]
+position = Vector2(1280, 0)
+ID = 1
+
+[node name="IntroMixing" parent="Levels" instance=ExtResource("4_galfo")]
+position = Vector2(2560, 0)
+ID = 2
+
+[node name="DuplicateAndMix" parent="Levels" instance=ExtResource("6_w3q5q")]
+position = Vector2(0, 768)
+ID = 3
+
+[node name="MultiMixers" parent="Levels" instance=ExtResource("7_087qm")]
+position = Vector2(1280, 768)
+ID = 4
+
+[node name="ChallengeOne" parent="Levels" instance=ExtResource("8_y3qna")]
+position = Vector2(2560, 768)
+ID = 5
+
+[node name="IntroCross" parent="Levels" instance=ExtResource("9_c5s2y")]
+position = Vector2(0, 1536)
+ID = 6
+
+[node name="DoubleCross" parent="Levels" instance=ExtResource("10_k4la8")]
+position = Vector2(1280, 1536)
+ID = 7
+
+[node name="IntroInverter" parent="Levels" instance=ExtResource("11_d2hjw")]
+position = Vector2(2560, 1536)
+ID = 8
+
+[node name="DivideAndConquer" parent="Levels" instance=ExtResource("12_j4bjs")]
+position = Vector2(0, 2304)
+ID = 9
+
+[node name="ComeAndGo" parent="Levels" instance=ExtResource("13_i3h4f")]
+position = Vector2(1280, 2304)
+ID = 10
+
+[node name="ChallengeTwo" parent="Levels" instance=ExtResource("14_vaq1i")]
+position = Vector2(2560, 2304)
+ID = 11

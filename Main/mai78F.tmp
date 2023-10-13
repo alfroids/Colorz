@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcmlevbuvrx8o"]
+
+[ext_resource type="PackedScene" uid="uid://dlhbsbudmwu0k" path="res://HUD/hud.tscn" id="1_bqrv3"]
+[ext_resource type="PackedScene" uid="uid://druelnfgqhftr" path="res://Levels/intro_basics.tscn" id="1_ewq2q"]
+[ext_resource type="PackedScene" uid="uid://dnsi7smbsj70j" path="res://Levels/intro_duplication.tscn" id="2_267ad"]
+[ext_resource type="Script" path="res://Main/camera.gd" id="4_iif4b"]
+
+[node name="Main" type="Node"]
+
+[node name="Levels" type="Node2D" parent="."]
+
+[node name="IntroBasics" parent="Levels" instance=ExtResource("1_ewq2q")]
+position = Vector2(224, 40)
+ID = 0
+
+[node name="IntroDuplication" parent="Levels" instance=ExtResource("2_267ad")]
+position = Vector2(1448, 40)
+ID = 2
+
+[node name="HUD" parent="." instance=ExtResource("1_bqrv3")]
+
+[node name="Camera" type="Camera2D" parent="."]
+script = ExtResource("4_iif4b")
