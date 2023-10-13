@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgbot2rhxo3uv"]
+
+[ext_resource type="PackedScene" uid="uid://dwdho6g4fvxo0" path="res://Levels/Base/base_level.tscn" id="1_7adfh"]
+[ext_resource type="PackedScene" uid="uid://bcovngkir4ll6" path="res://Pieces/Fixed/Source/source.tscn" id="2_2patr"]
+[ext_resource type="PackedScene" uid="uid://dg8na3tc0n1p2" path="res://Pieces/Fixed/Bucket/bucket.tscn" id="3_pn5hr"]
+[ext_resource type="PackedScene" uid="uid://d2idyrt6g5cd7" path="res://Pieces/Fixed/Wall/wall.tscn" id="4_6j5qq"]
+
+[node name="DuplicateAndMix" instance=ExtResource("1_7adfh")]
+
+[node name="Source" parent="Sources" index="0" instance=ExtResource("2_2patr")]
+position = Vector2(96, 96)
+color = 6
+
+[node name="Source2" parent="Sources" index="1" instance=ExtResource("2_2patr")]
+position = Vector2(288, 288)
+color = 3
+
+[node name="Source3" parent="Sources" index="2" instance=ExtResource("2_2patr")]
+position = Vector2(160, 544)
+color = 1
+
+[node name="Bucket" parent="Buckets" index="0" instance=ExtResource("3_pn5hr")]
+position = Vector2(480, 96)
+rotation = 1.5708
+direction = 1
+label = 6
+
+[node name="Bucket2" parent="Buckets" index="1" instance=ExtResource("3_pn5hr")]
+position = Vector2(800, 224)
+rotation = 3.14159
+direction = 2
+label = 3
+
+[node name="Bucket3" parent="Buckets" index="2" instance=ExtResource("3_pn5hr")]
+position = Vector2(800, 416)
+rotation = 3.14159
+direction = 2
+label = 5
+
+[node name="Wall" parent="Walls" index="0" instance=ExtResource("4_6j5qq")]
+position = Vector2(224, 224)
+
+[node name="Wall2" parent="Walls" index="1" instance=ExtResource("4_6j5qq")]
+position = Vector2(224, 288)
+
+[node name="Wall3" parent="Walls" index="2" instance=ExtResource("4_6j5qq")]
+position = Vector2(224, 352)
+
+[node name="Wall4" parent="Walls" index="3" instance=ExtResource("4_6j5qq")]
+position = Vector2(864, 160)
+
+[node name="Wall5" parent="Walls" index="4" instance=ExtResource("4_6j5qq")]
+position = Vector2(864, 224)
+
+[node name="Wall6" parent="Walls" index="5" instance=ExtResource("4_6j5qq")]
+position = Vector2(864, 288)
+
+[node name="Wall7" parent="Walls" index="6" instance=ExtResource("4_6j5qq")]
+position = Vector2(864, 352)
+
+[node name="Wall8" parent="Walls" index="7" instance=ExtResource("4_6j5qq")]
+position = Vector2(864, 416)
+
+[node name="Wall9" parent="Walls" index="8" instance=ExtResource("4_6j5qq")]
+position = Vector2(864, 480)

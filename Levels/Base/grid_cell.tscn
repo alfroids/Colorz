@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmfmieav6gt1f"]
+
+[ext_resource type="Script" path="res://Levels/Base/grid_cell.gd" id="1_1ykxk"]
+
+[node name="GridCell" type="ReferenceRect"]
+offset_right = 64.0
+offset_bottom = 64.0
+border_color = Color(0.0156863, 0.0156863, 0.0196078, 1)
+border_width = 2.0
+editor_only = false
+script = ExtResource("1_1ykxk")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
