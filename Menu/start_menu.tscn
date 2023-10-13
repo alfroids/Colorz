@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdyenpwgbmada"]
+
+[ext_resource type="Script" path="res://Menu/start_menu.gd" id="1_1ww2b"]
+[ext_resource type="PackedScene" uid="uid://b18ek11ioyssa" path="res://Menu/Logo/logo.tscn" id="1_dbvcs"]
+[ext_resource type="PackedScene" uid="uid://cxsva1781mskc" path="res://Menu/Buttons/start_game_button.tscn" id="2_54ctr"]
+[ext_resource type="PackedScene" uid="uid://eeftpge6h6sn" path="res://Menu/Buttons/quit_game_button.tscn" id="3_6arvf"]
+[ext_resource type="Texture2D" uid="uid://dhme3w6sxyn4f" path="res://HUD/diagram.png" id="4_wrlud"]
+[ext_resource type="FontFile" uid="uid://cf6sdkis71xhn" path="res://fonts/Kanit-Medium.ttf" id="5_j4u12"]
+
+[sub_resource type="FontVariation" id="FontVariation_ng1vv"]
+base_font = ExtResource("5_j4u12")
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ww2b")
+
+[node name="Rows" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = 64.0
+offset_right = -128.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo" parent="Rows" instance=ExtResource("1_dbvcs")]
+layout_mode = 2
+
+[node name="Center" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 64
+
+[node name="Buttons" type="VBoxContainer" parent="Rows/Center"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StartGameButton" parent="Rows/Center/Buttons" instance=ExtResource("2_54ctr")]
+layout_mode = 2
+color_id = 2
+
+[node name="QuitGameButton" parent="Rows/Center/Buttons" instance=ExtResource("3_6arvf")]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="Rows/Center"]
+visible = false
+layout_mode = 2
+texture = ExtResource("4_wrlud")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Footer" type="Label" parent="Rows"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_colors/font_color = Color(0.0156863, 0.0156863, 0.0196078, 1)
+theme_override_fonts/font = SubResource("FontVariation_ng1vv")
+theme_override_font_sizes/font_size = 24
+text = "A game by 12jgy, alfroids, BK & edusattin
+Remade in Godot 4 by alfroids"
+
+[connection signal="pressed" from="Rows/Center/Buttons/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="Rows/Center/Buttons/QuitGameButton" to="." method="_on_quit_game_button_pressed"]

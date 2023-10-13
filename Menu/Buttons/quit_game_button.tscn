@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://eeftpge6h6sn"]
+
+[ext_resource type="PackedScene" uid="uid://nvknx6oeboix" path="res://Menu/Buttons/menu_button.tscn" id="1_63qwy"]
+
+[node name="QuitGameButton" instance=ExtResource("1_63qwy")]
+color_id = 1
+
+[node name="Label" parent="." index="0"]
+theme_override_colors/font_shadow_color = Color(0.976471, 0.0823529, 0.321569, 0.4)
+text = "Quit Game
+"

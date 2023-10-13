@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxsva1781mskc"]
+
+[ext_resource type="PackedScene" uid="uid://nvknx6oeboix" path="res://Menu/Buttons/menu_button.tscn" id="1_dwy06"]
+
+[node name="StartGameButton" instance=ExtResource("1_dwy06")]
+color_id = 1
+
+[node name="Label" parent="." index="0"]
+theme_override_colors/font_shadow_color = Color(0.976471, 0.0823529, 0.321569, 0.4)
+text = "Start Game"
